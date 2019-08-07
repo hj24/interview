@@ -17,3 +17,14 @@ list_a = a.split(' ')
 reg = re.findall('\d+\.?\d*|[a-zA-Z]+', a)
 list_res = [ch for ch in list_a if ch not in reg]
 print(' '.join(list_res))
+
+# a="张明 98分"，用re.sub，将98替换为100
+a="张明 98分"
+res = re.sub('\d+', '100', a)
+print(res)
+
+#正则匹配，匹配日期2018-03-20
+# url='https://sycm.taobao.com/bda/tradinganaly/overview/get_summary.json?dateRange=2018-03-20%7C2018-03-20&dateType=recent1&device=1&token=ff25b109b&_=1521595613462'
+url='https://sycm.taobao.com/bda/tradinganaly/overview/get_summary.json?dateRange=2018-03-20%7C2018-03-20&dateType=recent1&device=1&token=ff25b109b&_=1521595613462'
+s = re.findall('dateRange=(.*?)%7C', url)
+print(s)

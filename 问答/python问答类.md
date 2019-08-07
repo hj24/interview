@@ -16,7 +16,28 @@
 1. range和xrange的区别？
 
     在Python2中range返回的是一个序列，而xrange是一个生成器，性能上xrange更好
-    不过在python3中range已经取代了xrange，如果要选兼容代码，直接用range
+    不过在python3中range已经取代了xrange，如果要选兼容代码，直接用range，不过要注意
+    python3中range虽然是惰性的，但它并不是生成器，只是一个可迭代对象。
+    
+## 异常
+
+1. IOError、AttributeError、ImportError、IndentationError、IndexError、KeyError、SyntaxError、NameError分别代表什么异常？
+
+    IOError: 输入输出异常
+    
+    AttributeError: 试图访问一个类没有的属性
+    
+    ImportError: 无法导入模块和包
+    
+    IndentationError: 语法错误，没有正确对齐
+    
+    IndexError: 索引越界
+    
+    KeyError: 试图访问字典里不存在的键
+    
+    SyntaxError: 代码逻辑出错
+    
+    NameError: 使用一个还未赋予对象的变量
     
 ## 面向对象
 1. 新式类和经典类有哪些区别
