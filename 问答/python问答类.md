@@ -19,6 +19,11 @@
     不过在python3中range已经取代了xrange，如果要选兼容代码，直接用range，不过要注意
     python3中range虽然是惰性的，但它并不是生成器，只是一个可迭代对象。
     
+2. __repr__和__str__的区别
+
+    repr是给python看的，更正式，包含详细信息，str是给人看的更直观，由str(), print()方法调用
+    str缺省时，print会显示repr的值。
+
 ## 异常
 
 1. IOError、AttributeError、ImportError、IndentationError、IndexError、KeyError、SyntaxError、NameError分别代表什么异常？
@@ -53,6 +58,9 @@
     
     __init__用来初始化实例的参数，它有一个self对象，就是__new__返回的实例
     
+3. __new__的用处
+
+    继承一些不可变的class时(比如int, str, tuple)， 提供给你一个自定义这些类的实例化过程的途径。    
 
     
 ## 设计
@@ -83,7 +91,7 @@
     
     1. 使用模块
         python的模块就是天然的单例模式，第一次生成时产生.pyc文件，第二次直接加载.pyc，不会
-        再调用代码，因此我们只需要把类和实例放到一个模块供调用即可
+        再调用代码，因此我们只需要把类和实例放到一个模块供调用即可。
         ```python
         class Single:
            def foo(self):

@@ -9,4 +9,21 @@ print(odd)
 
 # 列表推导式求列表所有奇数并构造新列表，a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 odd = [i for i in a if i % 2 != 0]
+odd.append([1,2,3])
+
+
+
+import copy
+
+op = copy.copy(odd)
+dp = copy.deepcopy(odd)
+#print(op)
+# op[5].append(4)
+# print(op)
+# print(odd)
+
+
+
+dp[5].append(4)
+print(dp)
 print(odd)
